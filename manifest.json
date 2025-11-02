@@ -1,0 +1,25 @@
+{
+  "manifest_version": 3,
+  "name": "Educational Keylogger Extension",
+  "version": "2.0",
+  "description": "Browser keylogger for educational and security research purposes only",
+  "permissions": [
+    "storage"
+  ],
+  "content_scripts": [
+    {
+      "matches": ["<all_urls>"],
+      "js": ["src/content.js"],
+      "run_at": "document_end"
+    }
+  ],
+  "action": {
+    "default_popup": "src/dashboard.html",
+    "default_title": "View Keylogger Dashboard",
+    "default_icon": "assets/icon.png"
+  },
+  "icons": {
+    "48": "assets/icon.png",
+    "128": "assets/icon.png"
+  }
+}
