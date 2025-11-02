@@ -17,7 +17,12 @@ This tool is intended **ONLY** for educational purposes and authorized security 
     <td align="center">
       <img src="https://github.com/user-attachments/assets/20308658-23fb-44f9-b8f1-6960c18c83c4" alt="Feature 2" width="280" />
       <br />
-      <sub><b>Records and functionalities</b></sub>
+      <sub><b>Functionalities</b></sub>
+    </td>
+     <td align="center">
+      <img src="https://github.com/user-attachments/assets/cb78db61-fe81-486b-8cc7-bf00608562c4" alt="Feature 2" width="280" />
+      <br />
+      <sub><b>Records</b></sub>
     </td>
    
   </tr>
