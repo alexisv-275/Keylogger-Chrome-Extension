@@ -65,13 +65,28 @@ function saveText(element) {
             fieldName: element ? (element.name || element.id || 'unnamed') : 'unknown'
         };
         
+        // Check if extension context is still valid
+        if (!chrome.runtime?.id) {
+            console.log('Extension context invalidated - please reload the page');
+            return;
+        }
+        
         // Get existing logs and add new one
         chrome.storage.local.get(['keylogs'], function(result) {
+            if (chrome.runtime.lastError) {
+                console.log('Storage error:', chrome.runtime.lastError.message);
+                return;
+            }
+            
             const logs = result.keylogs || [];
             logs.push(logEntry);
             
             // Save to Chrome Storage
             chrome.storage.local.set({ keylogs: logs }, function() {
+                if (chrome.runtime.lastError) {
+                    console.log('Storage error:', chrome.runtime.lastError.message);
+                    return;
+                }
                 console.log('💾 Text saved [' + fieldType + ']:', currentText.substring(0, 50) + '...');
             });
         });
@@ -97,7 +112,7 @@ document.addEventListener('keydown', function(event) {
     
     // Skip if sensitive field
     if (fieldType === 'password' || fieldType === 'cvv/pin' || fieldType === 'credit-card') {
-        console.log('🔒 Sensitive field - input ignored');
+        console.log('Sensitive field - input ignored');
         return;
     }
     
@@ -114,7 +129,7 @@ document.addEventListener('keydown', function(event) {
         currentText += event.key;
     }
     
-    console.log('✅ Captured [' + fieldType + ']:', event.key, '| Accumulated:', currentText.length, 'characters');
+    console.log('Captured [' + fieldType + ']:', event.key, '| Accumulated:', currentText.length, 'characters');
 });
 
 // Save text when user leaves a field (blur)
