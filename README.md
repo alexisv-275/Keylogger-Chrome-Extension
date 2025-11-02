@@ -7,10 +7,26 @@ A browser extension designed for educational and security research purposes that
 This tool is intended **ONLY** for educational purposes and authorized security research. Unauthorized monitoring of user input may violate privacy laws and ethical guidelines. Use responsibly and only on systems you own or have explicit permission to test.
 
 ## Features
+<table>
+  <tr>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/f1646fe9-630b-4556-a018-7aca699ffa19" alt="Feature 1" width="280" />
+      <br />
+      <sub><b>Interactive Dashboard</b></sub>
+    </td>
+    <td align="center">
+      <img src="https://github.com/user-attachments/assets/20308658-23fb-44f9-b8f1-6960c18c83c4" alt="Feature 2" width="280" />
+      <br />
+      <sub><b>Records and functionalities</b></sub>
+    </td>
+   
+  </tr>
+</table>
 
 - **Keystroke Capture**: Records text input from web forms and text fields
 - **Privacy Protection**: Automatically excludes sensitive fields (passwords, CVV, credit cards)
 - **Interactive Dashboard**: View captured logs with statistics and filtering
+
 - **Export Functionality**: Export logs as JSON 
 - **Field Type Detection**: Identifies email, username, search, and general text fields
 
